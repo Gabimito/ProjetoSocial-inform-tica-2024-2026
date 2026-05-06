@@ -2,7 +2,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Estrutura para o rodapé ficar sempre embaixo */
+
 body {
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -11,7 +11,7 @@ body {
 }
 
 .content-wrapper {
-  flex: 1; /* Faz o conteúdo ocupar o espaço e empurrar o footer */
+  flex: 1; 
 }
 
 /* NAVBAR */
