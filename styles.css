@@ -14,6 +14,55 @@ body {
     background-color: var(--dark-blue);
     padding: 15px 0;
 }
+/* Efeito de transição suave */
+#navbar {
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid transparent;
+}
+/* Estilo base dos links da Navbar */
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 5px 0;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* Criando a linha invisível abaixo do texto */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-blue-light);
+    transition: width 0.3s ease;
+}
+
+/* Animação ao passar o mouse (Hover) */
+.navbar-nav .nav-link:hover {
+    color: #ffffff ;
+    transform: translateY(-2px); /* Leve subida */
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* A linha cresce até preencher o texto */
+}
+
+/* Ajuste de transição para o texto não pular */
+.nav-link {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Classe aplicada via JavaScript ao rolar a página */
+.navbar-scrolled {
+    padding: 10px 0 ;
+    background-color: rgba(0, 51, 102, 0.95) ; /* Azul com leve transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro jateado */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) ;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
 
 .logo-img {
     height: 40px;
