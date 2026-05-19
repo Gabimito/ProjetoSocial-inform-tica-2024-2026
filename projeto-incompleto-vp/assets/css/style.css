@@ -45,6 +45,19 @@ body {
 
 }
 
+.logo-icon {
+  width: 100px;  
+  height: 100px; 
+  object-fit: cover; 
+  
+  border-radius: 50%; 
+}
+
+.logo-navbar{
+    width: 40px;
+    height: 40px;
+}
+
 .nav-link:hover, .nav-link.active {
     opacity: 1;
     font-weight: 700;
@@ -66,6 +79,17 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(19, 8, 180, 0.2);
     color: white;
+}
+
+.btn-vibrant{
+    /* O segredo: usamos background: linear-gradient */
+    background: linear-gradient(45deg, #007BFF, #1a1581) !important;
+    
+    /* Remove a borda para não quebrar o visual */
+    border: none !important;
+    
+    /* Garante que o efeito de transição seja suave */
+    transition: all 0.3s ease;
 }
 
 .btn-outline-primary:hover {
@@ -244,7 +268,7 @@ body {
         width: 70%;
         height: 2px;
         background-color: #E8F0FE;
-        z-index: 0;
+        z-index: -1;
     }
 }
 
