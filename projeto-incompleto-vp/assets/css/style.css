@@ -42,6 +42,7 @@ body {
 .nav-link {
     font-weight: 600;
     opacity: 0.7; /* Efeito text-white-50 do design */
+
 }
 
 .nav-link:hover, .nav-link.active {
@@ -54,19 +55,37 @@ body {
     background-color: var(--vp-dark-indigo);
     color: white;
     font-weight: 600;
-    border-radius: 8px; /* Cantos conforme design */
+    border-radius: 12px; /* Cantos conforme design */
     padding: 12px 28px;
     border: none;
     transition: all 0.3s ease;
 }
 
 .btn-indigo:hover {
-    background-color: #0d0950;
+    background-color: #08009b;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(15, 10, 94, 0.2);
+    box-shadow: 0 8px 20px rgba(19, 8, 180, 0.2);
     color: white;
 }
 
+.btn-outline-primary:hover {
+    background-color: var(--vp-vibrant-blue);
+    border-color: var(--vp-vibrant-blue);
+    color: rgb(0, 15, 151);
+}
+
+.btn-outline-secondary {
+    border-color: var(--vp-dark-indigo);
+    color: var(--vp-dark-indigo);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: rgb(0, 0, 136);
+    border-color: var(--vp-vibrant-blue);
+    color: white;
+}
 /* 5. CARDS BASE E EFEITOS */
 .card-figma {
     background-color: white;
@@ -257,4 +276,24 @@ body {
 /* Ajuste especial para quando o divider estiver dentro da seção azul clara */
 .about-pillars .divider-text {
     background-color: #F4F7FB !important; /* Cor exata da seção bg-light-soft */
+}
+
+/* Melhor alinhamento da navbar */
+/* Logo da Navbar */
+.navbar-logo{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Responsivo */
+@media (max-width: 768px){
+    .navbar-logo{
+        width: 38px;
+        height: 38px;
+    }
+
+    .navbar-brand{
+        font-size: 1.1rem;
+    }
 }
