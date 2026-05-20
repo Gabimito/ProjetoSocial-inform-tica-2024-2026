@@ -112,3 +112,50 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarTela();
 
 });
+
+// ==========================================================================
+// IMPLEMENTAÇÃO DO EASTER EGG (12 CLIQUES - VÍDEO LOCAL)
+// ==========================================================================
+const navbarBrand = document.querySelector(".navbar-brand");
+const easterModalElement = document.getElementById('easterEggModal');
+const localVideo = document.getElementById('videoEasterEgg');
+
+let cliqueContador = 0;
+let cliqueTimeout;
+
+if (navbarBrand && easterModalElement && localVideo) {
+    const easterModal = new bootstrap.Modal(easterModalElement);
+
+    navbarBrand.addEventListener("click", (e) => {
+        e.preventDefault();
+        cliqueContador++;
+
+        // Zera o contador se houver uma pausa de 3 segundos entre os cliques
+        clearTimeout(cliqueTimeout);
+        cliqueTimeout = setTimeout(() => {
+            cliqueContador = 0;
+        }, 3000);
+
+        if (cliqueContador === 12) {
+            cliqueContador = 0; 
+            
+            // Recarrega o vídeo do início
+            localVideo.load(); 
+            localVideo.currentTime = 0;
+            
+            // Abre a janela flutuante
+            easterModal.show();
+            
+            // Executa a reprodução imediata do arquivo
+            localVideo.play().catch(error => {
+                console.log("Autoplay com som bloqueado pelo navegador. Play manual necessário:", error);
+            });
+        }
+    });
+
+    // Pausa e reseta o vídeo ao fechar a janela para não continuar consumindo processamento
+    easterModalElement.addEventListener('hidden.bs.modal', () => {
+        localVideo.pause();
+    });
+}
+// ==========================================================================
